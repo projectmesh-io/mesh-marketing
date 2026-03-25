@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — Project Mesh</title>
+  <meta name="description" content="Simple pricing for Project Mesh. Free to start, scale when you're ready.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            surface: { DEFAULT: '#0d1117', card: '#161b22', border: '#30363d' },
+            accent: { DEFAULT: '#6366f1', light: '#818cf8', dark: '#4f46e5' },
+            txt: { DEFAULT: '#f0f6fc', muted: '#8b949e' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero-glow {
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.12) 0%, transparent 70%);
+    }
+  </style>
+</head>
+<body class="bg-surface text-txt antialiased">
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 bg-surface/80 backdrop-blur-lg border-b border-surface-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-2">
+        <svg class="w-7 h-7 text-accent" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="13" r="2.5" fill="currentColor"/><circle cx="22" cy="13" r="2.5" fill="currentColor"/><circle cx="16" cy="22" r="2.5" fill="currentColor"/><line x1="10" y1="13" x2="22" y2="13" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="13" x2="16" y2="22" stroke="currentColor" stroke-width="1.5"/><line x1="22" y1="13" x2="16" y2="22" stroke="currentColor" stroke-width="1.5"/></svg>
+        Project Mesh
+      </a>
+      <div class="hidden sm:flex items-center gap-8 text-sm text-txt-muted">
+        <a href="features.html" class="hover:text-white transition">Features</a>
+        <a href="docs.html" class="hover:text-white transition">Docs</a>
+        <a href="pricing.html" class="text-white font-medium">Pricing</a>
+      </div>
+      <a href="https://app.projectmesh.io" class="bg-accent hover:bg-accent-dark text-white font-medium text-sm px-4 py-2 rounded-lg transition">Open App</a>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="sm:hidden ml-3 text-txt-muted hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden sm:hidden border-t border-surface-border px-6 py-4 space-y-3 text-sm text-txt-muted">
+      <a href="features.html" class="block hover:text-white transition">Features</a>
+      <a href="docs.html" class="block hover:text-white transition">Docs</a>
+      <a href="pricing.html" class="block text-white font-medium">Pricing</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-glow">
+    <div class="max-w-4xl mx-auto px-6 pt-24 pb-16 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Simple pricing</h1>
+      <p class="mt-6 text-lg text-txt-muted max-w-xl mx-auto leading-relaxed">
+        Start free, upgrade when you need more. No surprises.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing cards -->
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Free -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 flex flex-col">
+        <h3 class="text-lg font-semibold mb-1">Free</h3>
+        <p class="text-txt-muted text-sm mb-6">For individuals getting started</p>
+        <div class="mb-8">
+          <span class="text-4xl font-extrabold">$0</span>
+          <span class="text-txt-muted text-sm">/mo</span>
+        </div>
+        <ul class="space-y-3 mb-10 flex-1">
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>1 workspace</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>3 agents</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Portal access</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Community support</span>
+          </li>
+        </ul>
+        <a href="https://app.projectmesh.io" class="block text-center border border-surface-border hover:border-txt-muted text-white font-medium px-6 py-3 rounded-xl transition">Get started</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="bg-surface-card border-2 border-accent rounded-xl p-8 flex flex-col relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">Popular</div>
+        <h3 class="text-lg font-semibold mb-1">Pro</h3>
+        <p class="text-txt-muted text-sm mb-6">For developers &amp; founders</p>
+        <div class="mb-8">
+          <span class="text-4xl font-extrabold">$29</span>
+          <span class="text-txt-muted text-sm">/mo</span>
+        </div>
+        <ul class="space-y-3 mb-10 flex-1">
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Unlimited workspaces</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Unlimited agents</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Priority support</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Early access to new features</span>
+          </li>
+        </ul>
+        <a href="https://app.projectmesh.io" class="block text-center bg-accent hover:bg-accent-dark text-white font-medium px-6 py-3 rounded-xl transition shadow-lg shadow-accent/20">Get started</a>
+      </div>
+
+      <!-- Team -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 flex flex-col">
+        <h3 class="text-lg font-semibold mb-1">Team</h3>
+        <p class="text-txt-muted text-sm mb-6">For teams &amp; organizations</p>
+        <div class="mb-8">
+          <span class="text-4xl font-extrabold">$99</span>
+          <span class="text-txt-muted text-sm">/mo</span>
+        </div>
+        <ul class="space-y-3 mb-10 flex-1">
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Everything in Pro</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Team members &amp; roles</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>SSO</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm">
+            <svg class="w-5 h-5 text-accent-light shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Audit logs</span>
+          </li>
+        </ul>
+        <a href="https://app.projectmesh.io" class="block text-center border border-surface-border hover:border-txt-muted text-white font-medium px-6 py-3 rounded-xl transition">Get started</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-surface-border">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <h2 class="text-3xl font-bold text-center mb-16">Frequently asked questions</h2>
+      <div class="space-y-8">
+
+        <div class="border-b border-surface-border pb-8">
+          <h3 class="text-lg font-semibold mb-3">Do I need to host my own OpenClaw?</h3>
+          <p class="text-txt-muted leading-relaxed">Yes. Project Mesh is a control plane that connects to your self-hosted OpenClaw gateways. You run the gateway on your own machine (typically behind Tailscale), and Mesh provides the management layer on top.</p>
+        </div>
+
+        <div class="border-b border-surface-border pb-8">
+          <h3 class="text-lg font-semibold mb-3">What LLM providers are supported?</h3>
+          <p class="text-txt-muted leading-relaxed">Any provider that OpenClaw supports. Since you bring your own API keys, you can use OpenAI, Anthropic, Google, Mistral, local models, or any other provider your OpenClaw gateway is configured for.</p>
+        </div>
+
+        <div class="border-b border-surface-border pb-8">
+          <h3 class="text-lg font-semibold mb-3">Is my data private?</h3>
+          <p class="text-txt-muted leading-relaxed">Yes. Your conversations, agent configurations, and API keys stay on your own infrastructure. Project Mesh connects to your gateway &mdash; it doesn&rsquo;t store your data.</p>
+        </div>
+
+        <div class="pb-4">
+          <h3 class="text-lg font-semibold mb-3">Can I switch plans later?</h3>
+          <p class="text-txt-muted leading-relaxed">Absolutely. You can upgrade or downgrade at any time from your account settings. Changes take effect immediately.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-surface-border">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-txt-muted">
+      <span>&copy; 2026 Project Mesh</span>
+      <div class="flex items-center gap-6">
+        <a href="https://app.projectmesh.io" class="hover:text-white transition">App</a>
+        <a href="https://github.com/projectmesh-io" class="hover:text-white transition">GitHub</a>
+        <a href="docs.html" class="hover:text-white transition">Docs</a>
+      </div>
+      <span class="text-xs text-txt-muted/60">Built on <a href="https://openclaw.io" class="hover:text-white transition">OpenClaw</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
