@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Mesh — One control plane for all your AI agents</title>
+  <meta name="description" content="Connect your OpenClaw gateways, manage agents across workspaces, and track tasks — all from one place.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              900: '#0a0e1a',
+              800: '#111827',
+              700: '#1e293b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-navy-900 text-white antialiased">
+
+  <!-- Nav -->
+  <nav class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <span class="text-xl font-bold tracking-tight">Project Mesh</span>
+    <div class="flex items-center gap-6 text-sm text-gray-400">
+      <a href="https://github.com/projectmesh-io" class="hover:text-white transition">GitHub</a>
+      <a href="https://app.projectmesh.io" class="bg-white text-navy-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-200 transition">Open App</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-6 pt-24 pb-32 text-center">
+    <h1 class="text-5xl sm:text-6xl font-bold tracking-tight leading-tight">One control plane for all your AI&nbsp;agents</h1>
+    <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">Connect your OpenClaw gateways, manage agents across workspaces, and track tasks&nbsp;&mdash; all from one place.</p>
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://app.projectmesh.io" class="bg-white text-navy-900 font-semibold px-8 py-3 rounded-lg text-lg hover:bg-gray-200 transition">Get started</a>
+      <a href="#features" class="text-gray-400 hover:text-white transition text-lg">Learn more &darr;</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="max-w-6xl mx-auto px-6 py-24">
+    <h2 class="text-3xl font-bold text-center mb-16">Everything you need to manage your agents</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-navy-800 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-navy-700 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Workspace Management</h3>
+        <p class="text-gray-400 leading-relaxed">Organise agents by project or business. Each workspace has its own isolated gateway, agents, and team.</p>
+      </div>
+      <div class="bg-navy-800 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-navy-700 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Unified Task View</h3>
+        <p class="text-gray-400 leading-relaxed">See tasks across all your workspaces in one place. Create from the portal or let your agents do it.</p>
+      </div>
+      <div class="bg-navy-800 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-navy-700 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Agent Control</h3>
+        <p class="text-gray-400 leading-relaxed">Configure agent personas, routing, and capabilities without touching config files.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="max-w-4xl mx-auto px-6 py-24">
+    <h2 class="text-3xl font-bold text-center mb-16">How it works</h2>
+    <div class="grid md:grid-cols-3 gap-10 text-center">
+      <div>
+        <div class="w-14 h-14 bg-navy-800 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl font-bold text-blue-400 border border-navy-700">1</div>
+        <h3 class="text-lg font-semibold mb-2">Connect your OpenClaw gateway</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Point your existing gateway at Mesh and it shows up instantly.</p>
+      </div>
+      <div>
+        <div class="w-14 h-14 bg-navy-800 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl font-bold text-emerald-400 border border-navy-700">2</div>
+        <h3 class="text-lg font-semibold mb-2">Invite your team</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Add teammates to workspaces with role-based access controls.</p>
+      </div>
+      <div>
+        <div class="w-14 h-14 bg-navy-800 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl font-bold text-violet-400 border border-navy-700">3</div>
+        <h3 class="text-lg font-semibold mb-2">Start managing agents</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Create tasks, configure agents, and monitor everything from one dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+    <h2 class="text-4xl font-bold mb-6">Ready to get started?</h2>
+    <p class="text-gray-400 mb-10 text-lg">Take control of your AI agents today.</p>
+    <a href="https://app.projectmesh.io" class="bg-white text-navy-900 font-semibold px-8 py-3 rounded-lg text-lg hover:bg-gray-200 transition">Open the app</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-navy-700 mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <span>&copy; 2026 Project Mesh</span>
+      <div class="flex items-center gap-6">
+        <a href="https://app.projectmesh.io" class="hover:text-white transition">App</a>
+        <a href="https://github.com/projectmesh-io" class="hover:text-white transition">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
