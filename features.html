@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Features — Project Mesh</title>
-  <meta name="description" content="Everything you need to manage AI agents at scale. Workspaces, multi-channel, unified tasks, team access, and more.">
+  <meta name="description" content="Orchestration, signal detection, runbooks, cost analytics, fleet memory search, and more. Mesh is the full intelligence layer for your OpenClaw agent fleet.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,111 +60,207 @@
   <section class="hero-glow">
     <div class="max-w-4xl mx-auto px-6 pt-24 pb-16 text-center">
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
-        Everything you need to manage<br>AI agents <span class="text-accent-light">at scale</span>
+        The full intelligence layer<br>for your <span class="text-accent-light">agent fleet</span>
       </h1>
       <p class="mt-6 text-lg text-txt-muted max-w-2xl mx-auto leading-relaxed">
-        From workspace isolation to multi-channel messaging, Project Mesh gives you full control over your agent fleet.
+        Mesh is more than a dashboard. It&rsquo;s the autonomy, orchestration, and intelligence layer that makes your OpenClaw agents actually work for you.
       </p>
     </div>
   </section>
 
-  <!-- Feature sections -->
-  <section class="max-w-5xl mx-auto px-6 py-16 space-y-8">
+  <!-- Section: Intelligence & Autonomy -->
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-4">
+    <h2 class="text-xs font-semibold uppercase tracking-widest text-accent-light mb-8">Intelligence &amp; Autonomy</h2>
+    <div class="space-y-6">
 
-    <!-- Workspaces -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+      <!-- Spec State Machine -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Spec State Machine</h3>
+          <p class="text-txt-muted leading-relaxed">Every piece of work has a lifecycle: <span class="text-white font-medium">draft → approved → building → review → done</span>. Create a spec in Mesh, approve it, and the right agent picks it up automatically. Progress is tracked in real time, blocking issues surface immediately, and completions trigger notifications without anyone chasing for updates.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Workspaces</h3>
-        <p class="text-txt-muted leading-relaxed">Each workspace maps to a project or business &mdash; Personal, OpTrader, Inflow, you name it. Every workspace gets its own isolated gateway, agents, sessions, and memory. No cross-contamination, full separation.</p>
+
+      <!-- Agent Orchestration Dashboard -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Agent Orchestration Dashboard</h3>
+          <p class="text-txt-muted leading-relaxed">A visual overview of every agent in your fleet: live status, active tasks, token usage, last activity, and health score. Spot idle agents, overloaded agents, and cost outliers at a glance. Mission control for the whole fleet — not just one workspace.</p>
+        </div>
       </div>
+
+      <!-- Runbook Engine -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Runbook Engine</h3>
+          <p class="text-txt-muted leading-relaxed">Define what agents should do automatically — without being asked. If a CI build fails, auto-assign a fix. If a support message goes unanswered for 10 minutes, escalate. If a competitor changes pricing, alert the PM agent. Runbooks turn your agents from reactive responders into proactive actors.</p>
+        </div>
+      </div>
+
+      <!-- Proactive Signal Detection -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Proactive Signal Detection</h3>
+          <p class="text-txt-muted leading-relaxed">Connect GitHub repos, email inboxes, market data feeds, and competitor pages. Mesh monitors them continuously and routes actionable signals to the right agent — automatically. Stop missing things. Stop asking "did anyone see this?" Your agents see it first.</p>
+        </div>
+      </div>
+
+      <!-- Inter-Agent Event Bus -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Inter-Agent Event Bus</h3>
+          <p class="text-txt-muted leading-relaxed">Agents publish events, other agents subscribe and act. A spec gets approved → DevLead picks it up. A task is completed → PM is notified. No central hub required, no manual handoffs. Your fleet coordinates itself via a lightweight pub/sub layer built into Mesh.</p>
+        </div>
+      </div>
+
+      <!-- Smart Heartbeat Manager -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Smart Heartbeat Manager</h3>
+          <p class="text-txt-muted leading-relaxed">Configure heartbeat policies per agent: active hours, conditional wakeups (only fire if something changed), cost budgets, and light-context mode. Stop paying for agents that run on a fixed schedule when nothing needs their attention. Let Mesh wake them only when it matters.</p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Agent configuration -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+  <!-- Section: Analytics & Learning -->
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-4">
+    <h2 class="text-xs font-semibold uppercase tracking-widest text-accent-light mb-8">Analytics &amp; Learning</h2>
+    <div class="space-y-6">
+
+      <!-- Decision Log -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Decision Log &amp; Learning</h3>
+          <p class="text-txt-muted leading-relaxed">Every decision made by an agent — and its outcome — is logged. Over time, Mesh surfaces patterns: "The last 3 times we shipped a feature without a spec, it required a revert." Your fleet learns from its own history so it stops repeating mistakes.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Agent Configuration</h3>
-        <p class="text-txt-muted leading-relaxed">Configure agents by purpose &mdash; dev-bot, support-bot, pricing-bot. Define personas with SOUL.md, set routing rules, and bind channels. All from the dashboard, no config files or YAML required.</p>
+
+      <!-- Cost Analytics -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Cost Analytics</h3>
+          <p class="text-txt-muted leading-relaxed">Per-agent, per-task cost breakdown across every model and workspace. Set monthly budget caps with automatic alerts. Get model optimization recommendations — know whether switching models saves money without sacrificing quality. No more LLM bill surprises.</p>
+        </div>
       </div>
+
+      <!-- Fleet Memory Search -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Fleet Memory Search</h3>
+          <p class="text-txt-muted leading-relaxed">Your agents each build their own memory. But knowledge gets siloed. Fleet Memory Search lets you query what the entire team of agents knows collectively — "What do we know about the ACH integration?" returns a synthesized answer across every agent's memory files, not just one.</p>
+        </div>
+      </div>
+
+      <!-- Prompt Caching Manager -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Prompt Caching Manager</h3>
+          <p class="text-txt-muted leading-relaxed">Manage prompt caching policies across your fleet. See cache hit rates per agent. Identify static context that should be cached but isn't. Reducing token usage on large system prompts translates directly to cost savings at scale.</p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Multi-channel -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+  <!-- Section: Platform & Management -->
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-16">
+    <h2 class="text-xs font-semibold uppercase tracking-widest text-accent-light mb-8">Platform &amp; Management</h2>
+    <div class="space-y-6">
+
+      <!-- Workspaces -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Workspaces</h3>
+          <p class="text-txt-muted leading-relaxed">Each workspace maps to a project or business. Every workspace gets its own isolated gateway, agents, sessions, and memory. No cross-contamination, full separation. Organize by client, product line, or initiative.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Multi-Channel Messaging</h3>
-        <p class="text-txt-muted leading-relaxed">Your team talks to agents where they already are &mdash; WhatsApp, Discord, Telegram, Signal, and iMessage. Route each channel to the right agent automatically. No new apps to install.</p>
+
+      <!-- Multi-channel -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Multi-Channel Messaging</h3>
+          <p class="text-txt-muted leading-relaxed">Your team talks to agents where they already are — WhatsApp, Discord, Telegram, Signal, and iMessage. Route each channel to the right agent automatically. No new apps to install, no user training required.</p>
+        </div>
       </div>
+
+      <!-- Team Access -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Team Access</h3>
+          <p class="text-txt-muted leading-relaxed">Invite team members with role-based access — admin, member, or viewer. Non-technical users create tasks and track work through the portal without touching config or code.</p>
+        </div>
+      </div>
+
+      <!-- Identity Linking -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Identity Linking</h3>
+          <p class="text-txt-muted leading-relaxed">One user, multiple channels. Link a person&rsquo;s WhatsApp, Discord, and portal identities together so agents always know who they&rsquo;re talking to — regardless of where the message came from.</p>
+        </div>
+      </div>
+
+      <!-- Self-hosted -->
+      <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Self-Hosted</h3>
+          <p class="text-txt-muted leading-relaxed">Your LLM API keys, your conversations, your agents — all on your infrastructure. Mesh connects via Tailscale, so nothing is exposed to the public internet. Your data never touches our servers.</p>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Unified task board -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Unified Task Board</h3>
-        <p class="text-txt-muted leading-relaxed">See tasks from every workspace in a single cross-workspace view. Create tasks from the portal, or let agents create them from conversations. Nothing falls through the cracks.</p>
-      </div>
-    </div>
-
-    <!-- Team access -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Team Access</h3>
-        <p class="text-txt-muted leading-relaxed">Invite team members with role-based access &mdash; admin, member, or viewer. Non-technical users log in to the portal to create tickets and tasks without touching any config.</p>
-      </div>
-    </div>
-
-    <!-- Identity linking -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Identity Linking</h3>
-        <p class="text-txt-muted leading-relaxed">One user, multiple channels. Link a person&rsquo;s WhatsApp, Discord, and portal identities together so agents always know who they&rsquo;re talking to, regardless of the channel.</p>
-      </div>
-    </div>
-
-    <!-- Self-hosted -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Self-Hosted</h3>
-        <p class="text-txt-muted leading-relaxed">Your data stays on your machine. Your LLM API keys, your conversations, your agents. Project Mesh connects to your infrastructure via Tailscale &mdash; nothing is exposed to the public internet.</p>
-      </div>
-    </div>
-
-    <!-- OpenClaw powered -->
-    <div class="bg-surface-card border border-surface-border rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-      <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-        <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">OpenClaw Powered</h3>
-        <p class="text-txt-muted leading-relaxed">Built on the open-source OpenClaw AI agent gateway. Benefit from a growing ecosystem, community contributions, and full transparency into how your agents run.</p>
-      </div>
-    </div>
-
   </section>
 
   <!-- CTA -->
   <section class="border-t border-surface-border">
     <div class="max-w-3xl mx-auto px-6 py-24 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Start managing your agents today</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Give your agents a brain.</h2>
       <p class="text-txt-muted text-lg mb-10">Free to get started. No credit card required.</p>
       <a href="https://app.projectmesh.io" class="bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-3.5 rounded-xl text-lg transition shadow-lg shadow-accent/20">Get started free</a>
     </div>
