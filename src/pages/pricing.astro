@@ -1,0 +1,25 @@
+---
+import Site from "../layouts/Site.astro";
+import Section from "@latchkey/www/components/Section.astro";
+import Pricing from "@latchkey/www/components/Pricing.astro";
+import PricingTier from "@latchkey/www/components/PricingTier.astro";
+import Faq from "@latchkey/www/components/Faq.astro";
+import FaqItem from "@latchkey/www/components/FaqItem.astro";
+---
+<Site title="Pricing — Project Mesh" description="Start free, upgrade when you need more. No surprises." defaultTheme="dark">
+  <Section eyebrow="Pricing" title="Simple *pricing*." lede="Start free, upgrade when you need more. No surprises.">
+    <Pricing>
+      <PricingTier name="Free" price="$0" period="/ mo" blurb="For individuals getting started." features={["1 workspace", "3 agents", "Portal access", "Community support"]} cta={{ label: "Get started", href: "https://app.projectmesh.io" }} />
+      <PricingTier name="Pro" price="$29" period="/ mo" blurb="For developers and founders." features={["Unlimited workspaces", "Unlimited agents", "Priority support", "Early access to new features"]} cta={{ label: "Get started", href: "https://app.projectmesh.io" }} featured />
+      <PricingTier name="Team" price="$99" period="/ mo" blurb="For teams and organisations." features={["Everything in Pro", "Team members and roles", "SSO", "Audit logs"]} cta={{ label: "Get started", href: "https://app.projectmesh.io" }} />
+    </Pricing>
+  </Section>
+  <Section spacing="tight">
+    <Faq>
+      <FaqItem q="Do I need to host my own OpenClaw?" open>Yes. Project Mesh is a control plane that connects to your self-hosted OpenClaw gateways; you run the gateway, Mesh provides the management layer.</FaqItem>
+      <FaqItem q="What LLM providers are supported?">Any provider OpenClaw supports — you bring your own API keys.</FaqItem>
+      <FaqItem q="Is my data private?">Yes. Conversations, agent configurations and API keys stay on your infrastructure.</FaqItem>
+      <FaqItem q="Can I switch plans later?">Any time, from account settings. Changes take effect immediately.</FaqItem>
+    </Faq>
+  </Section>
+</Site>

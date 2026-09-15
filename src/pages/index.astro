@@ -1,0 +1,53 @@
+---
+import Site from "../layouts/Site.astro";
+import Hero from "@latchkey/www/components/Hero.astro";
+import Section from "@latchkey/www/components/Section.astro";
+import Features from "@latchkey/www/components/Features.astro";
+import Feature from "@latchkey/www/components/Feature.astro";
+import Steps from "@latchkey/www/components/Steps.astro";
+import Step from "@latchkey/www/components/Step.astro";
+import Window from "@latchkey/www/components/Window.astro";
+import Faq from "@latchkey/www/components/Faq.astro";
+import FaqItem from "@latchkey/www/components/FaqItem.astro";
+import Cta from "@latchkey/www/components/Cta.astro";
+import LogoCloud from "@latchkey/www/components/LogoCloud.astro";
+---
+<Site title="Project Mesh — the intelligence layer for your AI fleet" description="Mesh is the brain layer on top of OpenClaw: orchestrate workflows, surface signals, track cost, and let your agents act autonomously." defaultTheme="dark">
+  <Fragment slot="blurb">The intelligence layer for your OpenClaw agent fleet. Built on OpenClaw.</Fragment>
+  <Hero eyebrow="Built on OpenClaw" title="Your AI agents. Now *intelligent*." lede="Mesh is the brain layer on top of OpenClaw. Orchestrate workflows, surface insights, detect signals, and let your agents act autonomously — so your team doesn't have to." primary={{ label: "Get started free", href: "https://app.projectmesh.io" }} secondary={{ label: "See all features", href: "/#product" }}>
+    <Window title="app.projectmesh.io/acme/fleet">
+      <div class="grid gap-px bg-border sm:grid-cols-4">
+        <div class="bg-card p-4"><p class="eyebrow mb-2">pm-agent</p><p class="text-sm font-medium">building · spec #88</p><p class="text-xs text-muted-foreground">health 98 · 41k tokens today</p></div>
+        <div class="bg-card p-4"><p class="eyebrow mb-2">support-agent</p><p class="text-sm font-medium">idle</p><p class="text-xs text-muted-foreground">last reply 4m ago · WhatsApp</p></div>
+        <div class="bg-card p-4"><p class="eyebrow mb-2">signals</p><p class="text-sm font-medium">competitor pricing changed</p><p class="text-xs text-muted-foreground">routed to pm-agent · 2m ago</p></div>
+        <div class="bg-card p-4"><p class="eyebrow mb-2">cost</p><p class="text-sm font-medium">$12.40 today</p><p class="text-xs text-muted-foreground">budget $30 · 2 recommendations</p></div>
+      </div>
+    </Window>
+  </Hero>
+  <div class="mx-auto w-full max-w-page px-6 md:px-8"><LogoCloud label="Channels" names={["WhatsApp", "Discord", "Telegram", "email", "GitHub"]} /></div>
+  <Section id="product" eyebrow="Intelligence, not just infrastructure" title="It gives your agents a *brain*." lede="Mesh goes beyond managing gateways: routing work automatically, watching for signals, and learning from every decision.">
+    <Features>
+      <Feature title="Spec state machine">Every piece of work has a lifecycle: draft → approved → building → review → done. Approve a spec and the right agent picks it up; progress is tracked in real time and completions notify without anyone chasing.</Feature>
+      <Feature title="Agent orchestration">A visual overview of every agent in your fleet: live status, active tasks, token usage, last activity, health score. Spot idle agents, overloaded agents and cost outliers at a glance.</Feature>
+      <Feature title="Runbook engine">Define what agents do without being asked. A CI build fails: auto-assign a fix. A support message goes unanswered for ten minutes: escalate. A competitor changes pricing: alert the PM agent.</Feature>
+      <Feature title="Proactive signal detection">Connect GitHub repos, email inboxes, market feeds and competitor pages. Mesh monitors them continuously and surfaces actionable signals to the right agent — before you notice.</Feature>
+      <Feature title="Cost analytics">Per-agent, per-task cost tracking with budget alerts and model optimisation recommendations. Know exactly what your fleet costs and where to cut.</Feature>
+      <Feature title="Fleet memory">Decisions, outcomes and context shared across agents, so the fleet learns as one and nobody solves the same problem twice.</Feature>
+    </Features>
+  </Section>
+  <Section eyebrow="How it goes" title="Under five minutes to a working fleet." spacing="tight">
+    <Steps>
+      <Step n={1} title="Create a workspace">Sign up, name the workspace, invite the team with roles.</Step>
+      <Step n={2} title="Connect your gateway">Point Mesh at your self-hosted OpenClaw instance, typically behind Tailscale. Your keys and conversations stay on your infrastructure.</Step>
+      <Step n={3} title="Give the agents work">Write a spec, approve it, watch an agent pick it up — and let runbooks handle the rest.</Step>
+    </Steps>
+  </Section>
+  <Section eyebrow="Questions" title="Frequently asked." spacing="tight">
+    <Faq>
+      <FaqItem q="Do I need to host my own OpenClaw?" open>Yes. Project Mesh is a control plane that connects to your self-hosted OpenClaw gateways. You run the gateway on your own machine (typically behind Tailscale); Mesh is the management layer on top.</FaqItem>
+      <FaqItem q="What LLM providers are supported?">Any provider OpenClaw supports. You bring your own API keys: OpenAI, Anthropic, Google, Mistral, local models, or whatever your gateway is configured for.</FaqItem>
+      <FaqItem q="Is my data private?">Yes. Your conversations, agent configurations and API keys stay on your own infrastructure. Mesh connects to your gateway; it does not store your data.</FaqItem>
+    </Faq>
+  </Section>
+  <Cta title="Give the fleet a *brain*." lede="Start free: one workspace, three agents, portal access." primary={{ label: "Get started free", href: "https://app.projectmesh.io" }} secondary={{ label: "Pricing", href: "/pricing" }} />
+</Site>
