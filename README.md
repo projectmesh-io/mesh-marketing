@@ -1,9 +1,13 @@
-# Project Mesh — Marketing Site
+# Project Mesh — marketing site
 
-Marketing page for [Project Mesh](https://app.projectmesh.io), a control plane for managing AI agent gateways.
+projectmesh.io. Mesh takes a goal and ships it: a graph of work, run by coding agents on nodes you own, gated by verification and budgets, handed back as merged pull requests with the record. The positioning is the PRD in `mesh-specs`.
 
-Built with plain HTML and Tailwind CSS (CDN). No build step required.
+Astro, static, on the house's `@latchkey/www` shell. Deploys to Cloudflare Pages from `main`.
 
 ## Development
 
-Open `index.html` in a browser. That's it.
+```sh
+npm ci
+npm run dev
+npm run build
+```

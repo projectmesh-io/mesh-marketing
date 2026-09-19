@@ -1,15 +1,105 @@
 ---
 title: Getting started
-description: Create your account, set up a workspace, and connect your OpenClaw gateway in under five minutes.
+description: Install the CLI, register a machine you own as a node, and — in the preview build — set the first goal.
 group: Docs
 order: 1
 ---
 
-1. **Create your account** at [app.projectmesh.io](https://app.projectmesh.io) and name your first workspace.
-2. **Connect a gateway** — point Mesh at your self-hosted OpenClaw instance running behind Tailscale.
-3. **Configure agents** — personas with `SOUL.md`, channel routing, capabilities per workspace.
-4. **Invite the team** — admin, member and viewer roles; link identities across messaging channels.
+Mesh is in preview, being built on runsheet's own backlog first. The first two steps below work today. The third is what the preview build adds; it is marked as such, and nothing in it is claimed to exist yet.
 
-## Coming soon
+## 1. Install the CLI
 
-Full guides for each step above, and the API reference for workspaces, agents, tasks and team management. Until then, the [community](https://github.com/projectmesh-io) is the fastest way to get help.
+Binaries for macOS, Linux and Windows are on the [releases page](https://github.com/projectmesh-io/mesh/releases), with `SHA256SUMS` beside them. macOS on Apple silicon:
+
+```sh
+curl -fsSL -o mesh https://github.com/projectmesh-io/mesh/releases/latest/download/mesh-darwin-arm64
+chmod +x mesh && mv mesh /usr/local/bin/
+mesh auth login
+```
+
+Substitute `mesh-darwin-amd64`, `mesh-linux-amd64`, `mesh-linux-arm64` or `mesh-windows-amd64.exe`.
+
+`mesh auth login` opens the console in your browser, waits for the callback, checks the returned session with the API, and saves it to `~/.mesh-session.json`. `--no-browser` prints the URL instead of opening it. `mesh auth whoami` shows who you are signed in as.
+
+## 2. Register a node
+
+A node is a machine you own that hosts sessions — a laptop, a workstation, a box in a rack. Registering pairs it with your account and leaves a per-node token on the machine. Nothing else about it is sent.
+
+```sh
+mesh node register
+```
+
+The CLI asks the API for a short-lived pairing code, prints it with a link into the console, and waits:
+
+```
+Open this link to register the machine (code pre-filled):
+
+    https://app.projectmesh.io/nodes?register=A8F3K2QP
+
+Or go to the portal Nodes page and paste the code manually:  A8F3K2QP
+
+Waiting for the portal to redeem the code (up to 10 minutes)...
+```
+
+Open the link, name the node, and confirm. The API creates the node, issues its token, and the CLI's next poll picks it up and saves it to `~/.mesh/node-token` (mode `0600`). The code expires; `--timeout-minutes` extends how long the CLI waits, and `--base-url` points it at an API other than `api.projectmesh.io`.
+
+Then start the daemon, in the foreground:
+
+```sh
+mesh node start
+```
+
+It connects to Mesh over gRPC with the node token, registers, heartbeats every thirty seconds, opens the stream, and reconnects with backoff if the connection drops. Sessions it hosts are terminals on this machine, relayed to the console. Keep it running under whatever supervises long-lived processes on the box — `launchd`, `systemd`, a `tmux` window.
+
+Two more, for later: `mesh node status` lists the nodes registered to your account with when each was last seen, and `mesh node logout` clears the token from this machine. Revoking it server-side is on the node's page in the console.
+
+### Claude Code on the node
+
+Version one's harness is Claude Code, running on the node on your own Anthropic access. Install it and sign in on the node as the account you want the builders to run as, so that `claude -p` works from a shell there. That is the whole harness setup: Mesh starts one fresh session per work item and injects the goal's context; the model access and the terms are yours.
+
+## 3. Set a goal — coming in the preview build
+
+Everything from here is specified in the PRD and not yet in the released CLI or console. It is here so you know what you are setting up for. The shape may change before it ships.
+
+A goal is a file: a statement, an acceptance contract, a budget, the repos in scope as a [Prologue](https://runsheet.dev/prologue) project, and where a human must sign off.
+
+```yaml
+# goals/audit-export.yaml — illustrative; the format is not final
+statement: >
+  An org admin can export the audit log as CSV from the console,
+  filtered by date range. The export itself is recorded in the log.
+
+acceptance:
+  tests:
+    - go test ./internal/audit/...
+    - npm test -- audit-export
+  demonstrate: an admin downloads the last 30 days as CSV from the console
+  review: >
+    No new endpoint without an authorization check.
+    Nothing outside the org's scope in the file.
+
+budget:
+  total_usd: 40
+  daily_usd: 15
+
+repos:
+  project: acme/platform   # a Prologue project: the repos in scope, and the
+                           # specs, decisions and instructions every session starts with
+
+checkpoints: [graph, pr]   # graph · pr · merge · none
+```
+
+The commands the preview build adds:
+
+```sh
+mesh goal create --file goals/audit-export.yaml   # the goal exists; the planner starts
+mesh goal plan audit-export                       # re-plan, or plan again after editing the goal
+mesh goal approve audit-export                    # the first checkpoint: the graph
+mesh goal watch audit-export                      # items, sessions, evaluator results, cost, live
+mesh goal pause audit-export                      # nothing new dispatches; running items finish
+mesh goal cancel audit-export                     # cooperative: builders close their PRs and say why
+```
+
+Work items mirror to GitHub Issues in the repos in scope. Each PR is opened by the Mesh GitHub App, attributed to the goal and to you. The goal's event log — who set it, what the planner produced, what each session did, what the evaluator found, who approved what — is the record, and it is exportable.
+
+The [changelog](/changelog) says which of these has landed.

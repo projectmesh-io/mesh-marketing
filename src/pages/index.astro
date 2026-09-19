@@ -6,48 +6,103 @@ import Features from "@latchkey/www/components/Features.astro";
 import Feature from "@latchkey/www/components/Feature.astro";
 import Steps from "@latchkey/www/components/Steps.astro";
 import Step from "@latchkey/www/components/Step.astro";
-import Window from "@latchkey/www/components/Window.astro";
+import Terminal from "@latchkey/www/components/Terminal.astro";
 import Faq from "@latchkey/www/components/Faq.astro";
 import FaqItem from "@latchkey/www/components/FaqItem.astro";
 import Cta from "@latchkey/www/components/Cta.astro";
-import LogoCloud from "@latchkey/www/components/LogoCloud.astro";
 ---
-<Site title="Project Mesh — the intelligence layer for your AI fleet" description="Mesh is the brain layer on top of OpenClaw: orchestrate workflows, surface signals, track cost, and let your agents act autonomously." defaultTheme="dark">
-  <Fragment slot="blurb">The intelligence layer for your OpenClaw agent fleet. Built on OpenClaw.</Fragment>
-  <Hero eyebrow="Built on OpenClaw" title="Your AI agents. Now *intelligent*." lede="Mesh is the brain layer on top of OpenClaw. Orchestrate workflows, surface insights, detect signals, and let your agents act autonomously — so your team doesn't have to." primary={{ label: "Get started free", href: "https://app.projectmesh.io" }} secondary={{ label: "See all features", href: "/#product" }}>
-    <Window title="app.projectmesh.io/acme/fleet">
-      <div class="grid gap-px bg-border sm:grid-cols-4">
-        <div class="bg-card p-4"><p class="eyebrow mb-2">pm-agent</p><p class="text-sm font-medium">building · spec #88</p><p class="text-xs text-muted-foreground">health 98 · 41k tokens today</p></div>
-        <div class="bg-card p-4"><p class="eyebrow mb-2">support-agent</p><p class="text-sm font-medium">idle</p><p class="text-xs text-muted-foreground">last reply 4m ago · WhatsApp</p></div>
-        <div class="bg-card p-4"><p class="eyebrow mb-2">signals</p><p class="text-sm font-medium">competitor pricing changed</p><p class="text-xs text-muted-foreground">routed to pm-agent · 2m ago</p></div>
-        <div class="bg-card p-4"><p class="eyebrow mb-2">cost</p><p class="text-sm font-medium">$12.40 today</p><p class="text-xs text-muted-foreground">budget $30 · 2 recommendations</p></div>
-      </div>
-    </Window>
+<Site title="Project Mesh — a goal in, merged pull requests out" description="Mesh compiles a goal into a graph of work, runs coding agents over it on machines you own, gates every result behind verification and a budget, and hands back merged pull requests with the record of how they got there. In preview." defaultTheme="dark">
+  <Fragment slot="blurb">A goal in, merged pull requests out. Coding agents on nodes you own, gated by verification and budgets. In preview, built on runsheet's own backlog first.</Fragment>
+
+  <Hero
+    eyebrow="Project Mesh · preview"
+    title="Hand it a goal, not a *prompt*."
+    lede="Mesh compiles a goal into a dependency-ordered graph of work and runs a mesh of coding agents over it on machines you own — Claude Code first, other harnesses behind an adapter. Nothing becomes a pull request until an evaluator has passed it and the budget allows. What comes back is merged PRs, with the record of how they got there."
+    primary={{ label: "Getting started", href: "/docs/getting-started" }}
+    secondary={{ label: "Open the console", href: "https://app.projectmesh.io" }}
+  >
+    <Terminal
+      title="mesh — a goal on runsheet's own backlog"
+      lines={[
+        { prompt: "$", text: "mesh goal create --file goals/audit-export.yaml" },
+        { text: "goal audit-export · budget $40, $15/day · checkpoints: graph, each PR", dim: true },
+        { text: "planner: 5 items, 2 runnable now · mirrored to runsheet/runsheet#412–416", dim: true },
+        { prompt: "$", text: "mesh goal approve audit-export" },
+        { text: "graph approved · 2 items dispatched to node chris-mbp", dim: true },
+        { prompt: "$", text: "mesh goal watch audit-export" },
+        { text: "#412 export schema    builder     running  fresh session · $1.10" },
+        { text: "#413 export handler   builder     running  fresh session · $0.90" },
+        { text: "#412 export schema    evaluator   passed   tests 14/14 · review clean" },
+        { text: "#412 export schema    integrator  merged   PR #418 · item $2.60 · goal $4.35 of $40" },
+      ]}
+    />
   </Hero>
-  <div class="mx-auto w-full max-w-page px-6 md:px-8"><LogoCloud label="Channels" names={["WhatsApp", "Discord", "Telegram", "email", "GitHub"]} /></div>
-  <Section id="product" eyebrow="Intelligence, not just infrastructure" title="It gives your agents a *brain*." lede="Mesh goes beyond managing gateways: routing work automatically, watching for signals, and learning from every decision.">
+
+  <Section id="why" eyebrow="Why Mesh" title="Verification is the *product*." lede="Autonomous agent PRs land at a fraction of the rate a person's do. The difference is not the agent — it is what stands between a diff and a merge.">
     <Features>
-      <Feature title="Spec state machine">Every piece of work has a lifecycle: draft → approved → building → review → done. Approve a spec and the right agent picks it up; progress is tracked in real time and completions notify without anyone chasing.</Feature>
-      <Feature title="Agent orchestration">A visual overview of every agent in your fleet: live status, active tasks, token usage, last activity, health score. Spot idle agents, overloaded agents and cost outliers at a glance.</Feature>
-      <Feature title="Runbook engine">Define what agents do without being asked. A CI build fails: auto-assign a fix. A support message goes unanswered for ten minutes: escalate. A competitor changes pricing: alert the PM agent.</Feature>
-      <Feature title="Proactive signal detection">Connect GitHub repos, email inboxes, market feeds and competitor pages. Mesh monitors them continuously and surfaces actionable signals to the right agent — before you notice.</Feature>
-      <Feature title="Cost analytics">Per-agent, per-task cost tracking with budget alerts and model optimisation recommendations. Know exactly what your fleet costs and where to cut.</Feature>
-      <Feature title="Fleet memory">Decisions, outcomes and context shared across agents, so the fleet learns as one and nobody solves the same problem twice.</Feature>
+      <Feature title="A goal in, merged PRs out">A goal is a statement, an acceptance contract, a budget, the repos in scope and where a human must sign off. Mesh owns it from there — through the graph, the sessions, the evaluator and the merge — and hands back pull requests it would merge itself. The unit you hand over is intent.</Feature>
+      <Feature title="A graph, with a contract per item">The planner compiles the goal into dependency-ordered work items, each small enough for one session and each with its own acceptance check derived from the goal's contract. The graph is the first checkpoint: you approve it before anything runs. Items mirror to GitHub Issues, so the team sees them where it already looks.</Feature>
+      <Feature title="A fresh session, on your node">Every item runs in a new Claude Code session on a machine you own, with the goal's context injected — the specs, decisions and instructions Prologue already indexes across your repos. Long sessions rot; a reset beats compaction. Your code never leaves the node.</Feature>
+      <Feature title="The evaluator gate">Before a PR exists, a separate session runs the item's acceptance check and an adversarial review of the diff. Never the builder's session; a different model where you configure one. The merge gate is where the value is, not the agent.</Feature>
+      <Feature title="Budgets, identity, audit, kill switch">A budget per goal and per day; a goal that spends it pauses and says so. Retry storms halt the item, not the goal. Every PR is opened by the Mesh GitHub App, attributed to the goal and the person who set it — never with someone's token. The event log is the audit trail. Cancel is cooperative, terminate is immediate, both are one command.</Feature>
+      <Feature title="One contract, many harnesses">Version one runs Claude Code on your own Anthropic access, one <code class="font-mono text-foreground">claude -p</code> per item. The harness adapter is the seam — start with context, stream progress, finish with a branch. Codex is next; Copilot CLI and Kiro speak the same contract.</Feature>
     </Features>
   </Section>
-  <Section eyebrow="How it goes" title="Under five minutes to a working fleet." spacing="tight">
+
+  <Section eyebrow="How it works" title="Set a goal, approve the *graph*." lede="The issue is the control plane; Mesh's record is the aggregate. Checkpoints are meant to be cheap — from the PR, from the console, from wherever the team already looks." spacing="tight">
     <Steps>
-      <Step n={1} title="Create a workspace">Sign up, name the workspace, invite the team with roles.</Step>
-      <Step n={2} title="Connect your gateway">Point Mesh at your self-hosted OpenClaw instance, typically behind Tailscale. Your keys and conversations stay on your infrastructure.</Step>
-      <Step n={3} title="Give the agents work">Write a spec, approve it, watch an agent pick it up — and let runbooks handle the rest.</Step>
+      <Step n={1} title="Set a goal">A statement, an acceptance contract — tests that must pass, a behaviour to demonstrate, a review rubric — a budget, the repos in scope as a Prologue project, and a checkpoint policy. <code class="font-mono text-foreground">mesh goal create</code> from a file, or from the console.</Step>
+      <Step n={2} title="Approve the graph">The planner returns dependency-ordered work items with a check each. Read it, change it, approve it. Nothing runs before you do, unless your policy says otherwise.</Step>
+      <Step n={3} title="The mesh runs">Builders take items in fresh sessions on your nodes. The evaluator checks each result before a PR opens. A blocked item goes back to the planner; an exhausted budget pauses the goal and says so.</Step>
+      <Step n={4} title="Merged, with the record">The integrator rebases, drives CI green and merges when the policy allows. The goal's event log — who set it, what the planner produced, what each session did, what the evaluator found, who approved — is exportable and replayable.</Step>
     </Steps>
   </Section>
-  <Section eyebrow="Questions" title="Frequently asked." spacing="tight">
+
+  <Section eyebrow="Boundaries" title="What Mesh is *not*." spacing="tight">
+    <ul class="grid max-w-2xl gap-4 text-base">
+      <li><span class="font-medium">Not a coding agent.</span> <span class="text-muted-foreground">It runs the ones that exist.</span></li>
+      <li><span class="font-medium">Not a spec editor or a wiki.</span> <span class="text-muted-foreground">Prologue indexes what git holds.</span></li>
+      <li><span class="font-medium">Not a chat product or a personal assistant.</span> <span class="text-muted-foreground">No messaging channels in version one.</span></li>
+      <li><span class="font-medium">Not hosted compute.</span> <span class="text-muted-foreground">Nodes are yours; Mesh is the control plane.</span></li>
+      <li><span class="font-medium">Not a durable-execution runtime.</span> <span class="text-muted-foreground">It borrows the model and runs on the estate's event log.</span></li>
+    </ul>
+  </Section>
+
+  <Section eyebrow="How it compares" title="The agent is not the *hard* part." lede="Cloud coding agents open a PR from a prompt; long-running agent loops keep one session alive and poll a board. Mesh makes the goal the durable thing and keeps every session fresh." spacing="tight">
+    <div class="prose max-w-none overflow-x-auto">
+      <table>
+        <thead><tr><th></th><th>A cloud coding agent</th><th>A long-running agent loop</th><th>Mesh</th></tr></thead>
+        <tbody>
+          <tr><td>Unit of work</td><td>A prompt, one PR</td><td>A board the agent polls</td><td>A goal, compiled to a graph with a check per item</td></tr>
+          <tr><td>Where code runs</td><td>The vendor's cloud</td><td>Wherever the session lives</td><td>Nodes you own</td></tr>
+          <tr><td>Session</td><td>One per task</td><td>One, kept alive for days</td><td>Fresh per item; the goal is what persists</td></tr>
+          <tr><td>Before a PR opens</td><td>The agent's own judgement</td><td>The agent's own judgement</td><td>A separate evaluator: the acceptance check and an adversarial review</td></tr>
+          <tr><td>Cost</td><td>Per seat or per token, after the fact</td><td>Whatever it ran up</td><td>A budget per goal and per day; a meter per item and session</td></tr>
+          <tr><td>Identity on the PR</td><td>The vendor's app</td><td>Someone's token</td><td>The Mesh GitHub App, attributed to the goal and its owner</td></tr>
+          <tr><td>Record</td><td>The PR description</td><td>A chat history</td><td>The goal's event log, exportable and replayable</td></tr>
+          <tr><td>Harness</td><td>The vendor's</td><td>Whichever one was wired in</td><td>Claude Code first; Codex and others behind the adapter</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </Section>
+
+  <Section eyebrow="The house" title="Glued from what runsheet already *has*." lede="Mesh is the control plane. The context, the state, the deploys and the identity are products that exist on their own." spacing="tight">
+    <Features columns={4}>
+      <Feature title="Prologue">The context agents read. A goal's repos are a Prologue project; the specs, decisions and instructions the team keeps in git are what every session starts with. <a href="https://runsheet.dev/prologue" class="text-primary hover:underline">runsheet.dev/prologue →</a></Feature>
+      <Feature title="Terrastore">Terraform state, authenticated by GitHub. How an item that touches infrastructure reads and writes it.</Feature>
+      <Feature title="Chippy">Deploys from one declaration file. How an item that has to run before it can be verified gets somewhere to run.</Feature>
+      <Feature title="Latchkey">Identity. The person who set the goal, the org a PR belongs to, and what a session is allowed to do. <a href="https://latchkey.id" class="text-primary hover:underline">latchkey.id →</a></Feature>
+    </Features>
+  </Section>
+
+  <Section eyebrow="Questions" title="Asked *first*." spacing="tight">
     <Faq>
-      <FaqItem q="Do I need to host my own OpenClaw?" open>Yes. Project Mesh is a control plane that connects to your self-hosted OpenClaw gateways. You run the gateway on your own machine (typically behind Tailscale); Mesh is the management layer on top.</FaqItem>
-      <FaqItem q="What LLM providers are supported?">Any provider OpenClaw supports. You bring your own API keys: OpenAI, Anthropic, Google, Mistral, local models, or whatever your gateway is configured for.</FaqItem>
-      <FaqItem q="Is my data private?">Yes. Your conversations, agent configurations and API keys stay on your own infrastructure. Mesh connects to your gateway; it does not store your data.</FaqItem>
+      <FaqItem q="Do I run the nodes myself?" open>Yes. A node is a machine you own running <code class="font-mono text-foreground">mesh node start</code>. It registers with a per-node token, opens a stream to Mesh and hosts the sessions; the console relays their terminals. Mesh never hosts the agents for you.</FaqItem>
+      <FaqItem q="Which models and harnesses?">Version one is Claude Code on the node, on your own Anthropic access — a subscription through the CLI, or an API key through the Agent SDK adapter. Other harnesses arrive behind the adapter, Codex first. The model an item runs on is the harness's; the evaluator can be configured to use a different one.</FaqItem>
+      <FaqItem q="Where does my code go?">It stays on your nodes. Sessions check out, build and push from there, and PRs land on GitHub. Mesh stores goals, their graphs, the decisions at each checkpoint, the cost meter and the event log — never your code, your keys or your Anthropic access.</FaqItem>
+      <FaqItem q="Is it ready?">It is in preview, being built on runsheet's own backlog first. Version one is done when a goal set on Monday is merged pull requests by Friday, with the audit trail intact and the spend visible to the dollar. The changelog says what has landed.</FaqItem>
     </Faq>
   </Section>
-  <Cta title="Give the fleet a *brain*." lede="Start free: one workspace, three agents, portal access." primary={{ label: "Get started free", href: "https://app.projectmesh.io" }} secondary={{ label: "Pricing", href: "/pricing" }} />
+
+  <Cta title="Set the first *goal*." lede="Mesh is in preview. Install the CLI, register a node, and follow the changelog for the goal-driven build as it lands." primary={{ label: "Getting started", href: "/docs/getting-started" }} secondary={{ label: "Changelog", href: "/changelog" }} />
 </Site>

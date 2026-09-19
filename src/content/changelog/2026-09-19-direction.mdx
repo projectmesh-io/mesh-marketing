@@ -1,0 +1,15 @@
+---
+title: Mesh is a goal-driven agent platform
+date: 2026-09-19
+tag: direction
+---
+
+Two framings are retired. "The intelligence layer for your OpenClaw agent fleet" — the gateway, the channels, the fleet dashboard this site carried until today — and the June reorientation to org → agents → channels. Neither is what Mesh is being built into.
+
+Mesh takes a goal and ships it. A goal — a statement, an acceptance contract, a budget, the repos in scope as a Prologue project, and where a human must sign off — is compiled into a dependency-ordered graph of work items, each with its own verification check. A mesh of coding agents runs over the graph on nodes you own: a builder takes each item in a fresh Claude Code session, an evaluator checks the result before any pull request opens, an integrator rebases and merges by policy. Budgets per goal and per day. Every PR from the Mesh GitHub App, attributed to the goal and the person who set it. The event log is the audit trail. Cancel and terminate are one command.
+
+What was built for the old framings and still serves is kept: the node daemon, the gRPC stream, the session relay, per-node tokens, the console, the CLI. The messaging channels are parked, not merged in.
+
+Version one runs on Claude Code; other harnesses arrive behind an adapter, Codex first. It is being built on runsheet's own backlog first, and is done when a goal set on Monday is merged pull requests by Friday with the audit trail intact and the spend visible to the dollar.
+
+The spec is in git: [projectmesh-io/mesh-specs](https://github.com/projectmesh-io/mesh-specs) — the PRD, and the ADR on the durable control plane. This site now says the same thing.

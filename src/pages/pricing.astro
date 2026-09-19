@@ -1,25 +1,28 @@
 ---
 import Site from "../layouts/Site.astro";
 import Section from "@latchkey/www/components/Section.astro";
-import Pricing from "@latchkey/www/components/Pricing.astro";
 import PricingTier from "@latchkey/www/components/PricingTier.astro";
 import Faq from "@latchkey/www/components/Faq.astro";
 import FaqItem from "@latchkey/www/components/FaqItem.astro";
 ---
-<Site title="Pricing — Project Mesh" description="Start free, upgrade when you need more. No surprises." defaultTheme="dark">
-  <Section eyebrow="Pricing" title="Simple *pricing*." lede="Start free, upgrade when you need more. No surprises.">
-    <Pricing>
-      <PricingTier name="Free" price="$0" period="/ mo" blurb="For individuals getting started." features={["1 workspace", "3 agents", "Portal access", "Community support"]} cta={{ label: "Get started", href: "https://app.projectmesh.io" }} />
-      <PricingTier name="Pro" price="$29" period="/ mo" blurb="For developers and founders." features={["Unlimited workspaces", "Unlimited agents", "Priority support", "Early access to new features"]} cta={{ label: "Get started", href: "https://app.projectmesh.io" }} featured />
-      <PricingTier name="Team" price="$99" period="/ mo" blurb="For teams and organisations." features={["Everything in Pro", "Team members and roles", "SSO", "Audit logs"]} cta={{ label: "Get started", href: "https://app.projectmesh.io" }} />
-    </Pricing>
+<Site title="Pricing — Project Mesh" description="Free while in preview. Bring your own nodes and your own Anthropic access. Priced per active goal or per node later — never per token." defaultTheme="dark">
+  <Section eyebrow="Pricing" title="Free in *preview*." lede="Mesh is being built on runsheet's own backlog first. While it is, it costs nothing to use. The machines and the model access are yours.">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,22rem)_1fr] md:items-start">
+      <PricingTier name="Preview" price="$0" period="while in preview" blurb="For a small team that ships on GitHub and already runs Claude Code." features={["Everything Mesh ships, as it ships", "Nodes you own — as many as you register", "Claude Code on your own Anthropic access", "No card, no seat count"]} cta={{ label: "Getting started", href: "/docs/getting-started" }} />
+      <div class="prose max-w-none">
+        <h3>What you bring</h3>
+        <p>Your nodes — any machine that can run Claude Code and reach Mesh. Your Anthropic access — a subscription through the CLI, or an API key through the Agent SDK adapter. The terms for each are Anthropic's, and yours to read.</p>
+        <h3>What will be metered later</h3>
+        <p>Per active goal per month, or per node — undecided until runsheet's own use has sized a goal. Not per token: the cost meter is for governance, not billing, and stays yours to read whatever the price becomes. When a price is set it goes in the changelog before it goes anywhere else.</p>
+      </div>
+    </div>
   </Section>
   <Section spacing="tight">
     <Faq>
-      <FaqItem q="Do I need to host my own OpenClaw?" open>Yes. Project Mesh is a control plane that connects to your self-hosted OpenClaw gateways; you run the gateway, Mesh provides the management layer.</FaqItem>
-      <FaqItem q="What LLM providers are supported?">Any provider OpenClaw supports — you bring your own API keys.</FaqItem>
-      <FaqItem q="Is my data private?">Yes. Conversations, agent configurations and API keys stay on your infrastructure.</FaqItem>
-      <FaqItem q="Can I switch plans later?">Any time, from account settings. Changes take effect immediately.</FaqItem>
+      <FaqItem q="Do I run the nodes myself?" open>Yes. A node is a machine you own running <code class="font-mono text-foreground">mesh node start</code>. It registers with a per-node token, opens a stream to Mesh and hosts the sessions. Mesh never hosts the agents for you.</FaqItem>
+      <FaqItem q="Which models and harnesses?">Version one is Claude Code on the node, on your own Anthropic access. Other harnesses arrive behind the adapter, Codex first.</FaqItem>
+      <FaqItem q="Where does my code go?">It stays on your nodes. Mesh stores goals, their graphs, the decisions at each checkpoint, the cost meter and the event log — never your code, your keys or your Anthropic access.</FaqItem>
+      <FaqItem q="What happens to preview users when pricing lands?">The price is announced in the changelog first. Nothing is metered until it is.</FaqItem>
     </Faq>
   </Section>
 </Site>
