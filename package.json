@@ -10,7 +10,7 @@
     "deploy": "wrangler pages deploy dist --branch=main --project-name mesh-marketing"
   },
   "dependencies": {
-    "@latchkey/www": "github:latchkeyid/www#7a725ec",
+    "@latchkey/www": "github:latchkeyid/www#fb89c50",
     "astro": "^7.3.0"
   },
   "devDependencies": {
